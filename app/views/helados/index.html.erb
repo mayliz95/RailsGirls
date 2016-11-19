@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Maravillosos Helados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Foto</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @helados.each do |helado| %>
+      <tr>
+        <td><%= helado.nombre %></td>
+        <td><%= helado.descripcion %></td>
+        <td><%= helado.foto %></td>
+        <td><%= helado.precio %></td>
+        <td><%= link_to 'Mostrar', helado %></td>
+        <td><%= link_to 'Editar', edit_helado_path(helado) %></td>
+        <td><%= link_to 'Eliminar', helado, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Helado', new_helado_path %>

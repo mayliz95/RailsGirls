@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @helado.nombre %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @helado.descripcion %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag(@helado.foto_url, :width => 400) if @helado.foto.present? %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @helado.precio %>
+</p>
+
+<%= link_to 'Editar', edit_helado_path(@helado) %> |
+<%= link_to 'Regresar', helados_path %>
